@@ -11,6 +11,7 @@ const mount = (
     defaultHistory,
     initialPath,
     onNavigate,
+    onSignIn,
   }) => {
   const history = defaultHistory || createMemoryHistory({
     initialEntries: [initialPath],
@@ -21,7 +22,7 @@ const mount = (
   }
   
   ReactDOM.render(
-    <App history={history} />,
+    <App history={history} onSignIn={onSignIn} />,
     el,
   )
   
@@ -37,7 +38,7 @@ const mount = (
 }
 
 if (process.env.NODE_ENV === 'development') {
-  const el = document.querySelector('#_marketing-dev-root')
+  const el = document.querySelector('#_auth-dev-root')
   
   if (el) {
     mount(el, { defaultHistory: createBrowserHistory() })
