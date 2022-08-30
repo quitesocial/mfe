@@ -4,9 +4,14 @@ import React, {
 } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { mount } from 'auth/AuthApp'
+// @ts-expect-error
+import { mount } from 'marketing/MarketingApp'
 
-const AuthApp = ({ onSignIn }) => {
+type TOnNavigateArgs = {
+  pathname: string,
+}
+
+const MarketingApp = () => {
   const ref = useRef(null)
   const history = useHistory()
   
@@ -15,8 +20,7 @@ const AuthApp = ({ onSignIn }) => {
       ref.current,
       {
         initialPath: history.location.pathname,
-        onSignIn,
-        onNavigate: ({ pathname: nextPathname }) => {
+        onNavigate: ({ pathname: nextPathname }: TOnNavigateArgs) => {
           const { pathname } = history.location
           
           if (pathname !== nextPathname) {
@@ -32,4 +36,4 @@ const AuthApp = ({ onSignIn }) => {
   return <div ref={ref} />
 }
 
-export default AuthApp
+export default MarketingApp
