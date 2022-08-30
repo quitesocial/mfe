@@ -21,7 +21,6 @@
         <span class="count revenue">$3,200</span>
       </div>
     </div>
-
     <div class="p-col-12 p-md-6 p-xl-3">
       <div class="highlight-box">
         <div class="initials" style="background-color: #007be5; color: #00448f">
@@ -70,7 +69,6 @@
         </div>
       </div>
     </div>
-
     <div class="p-col-12 p-md-6 p-lg-4">
       <Panel header="Tasks" style="height: 100%">
         <ul class="task-list">
@@ -107,7 +105,6 @@
         </ul>
       </Panel>
     </div>
-
     <div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
       <Panel header="Contact Us">
         <div class="p-grid">
@@ -134,38 +131,6 @@
         </div>
       </Panel>
     </div>
-
-    <!-- <div class="p-col-12 p-lg-4 contacts">
-      <Panel header="Contacts">
-        <ul>
-          <li>
-            <button class="p-link">
-              <span class="name">Claire Williams</span>
-              <span class="email">clare@primevue.com</span>
-            </button>
-          </li>
-          <li>
-            <button class="p-link">
-              <span class="name">Jason Dourne</span>
-              <span class="email">jason@primevue.com</span>
-            </button>
-          </li>
-          <li>
-            <button class="p-link">
-              <span class="name">Jane Davidson</span>
-              <span class="email">jane@primevue.com</span>
-            </button>
-          </li>
-          <li>
-            <button class="p-link">
-              <span class="name">Tony Corleone</span>
-              <span class="email">tony@primevue.com</span>
-            </button>
-          </li>
-        </ul>
-      </Panel>
-    </div> -->
-
     <div class="p-col-12 p-lg-4">
       <Panel header="Activity" style="height: 100%">
         <div class="activity-header">
@@ -179,7 +144,6 @@
             </div>
           </div>
         </div>
-
         <ul class="activity-list">
           <li>
             <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
@@ -198,7 +162,6 @@
         </ul>
       </Panel>
     </div>
-
     <div class="p-col-12 p-lg-6">
       <div class="card">
         <h1 style="font-size: 16px">Recent Sales</h1>
@@ -253,19 +216,19 @@
 </template>
 
 <script>
-import 'primevue/resources/themes/saga-blue/theme.css';
-import 'primevue/resources/primevue.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
+import 'primevue/resources/primevue.css';
+import 'primevue/resources/themes/saga-blue/theme.css';
 
-import Checkbox from 'primevue/checkbox';
 import Panel from 'primevue/panel';
-import Dropdown from 'primevue/dropdown';
-import InputText from 'primevue/inputtext';
+import Chart from 'primevue/chart';
 import Button from 'primevue/button';
 import Column from 'primevue/column';
+import Checkbox from 'primevue/checkbox';
+import Dropdown from 'primevue/dropdown';
+import InputText from 'primevue/inputtext';
 import DataTable from 'primevue/datatable';
-import Chart from 'primevue/chart';
 import ProgressBar from 'primevue/progressbar';
 
 export default {

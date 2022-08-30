@@ -1,28 +1,36 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import MaterialLink from '@material-ui/core/Link';
-import { Link } from 'react-router-dom';
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <MaterialLink component={Link} to="/" color="inherit">
-        Your Website
-      </MaterialLink>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Card from '@material-ui/core/Card'
+import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
+import MaterialLink from '@material-ui/core/Link'
+import CardMedia from '@material-ui/core/CardMedia'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+
+const Copyright = () => (
+  <Typography variant="body2" color="textSecondary" align="center">
+    {'Copyright © '}
+    
+    <MaterialLink
+      component={Link}
+      to="/"
+      color="inherit"
+    >
+      Your Website
+    </MaterialLink>
+    
+    {' '}
+    
+    {new Date().getFullYear()}
+    
+    {'.'}
+  </Typography>
+)
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -59,15 +67,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
-}));
+}))
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+const Album = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <Fragment>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -92,7 +100,11 @@ export default function Album() {
               short so folks don&apos;t simply skip over it entirely.
             </Typography>
             <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
+              <Grid
+                container
+                spacing={2}
+                justify="center"
+              >
                 <Grid item>
                   <Link to="/pricing">
                     <Button variant="contained" color="primary">
@@ -114,40 +126,56 @@ export default function Album() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+            {
+              cards.map((card) => (
+                <Grid
+                  item
+                  key={card}
+                  xs={12}
+                  sm={6}
+                  md={4}
+                >
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://source.unsplash.com/random"
+                      title="Image title"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="h2"
+                      >
+                        Heading
+                      </Typography>
+                      <Typography>
+                        This is a media card. You can use this section to describe
+                        the content.
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        View
+                      </Button>
+                      <Button size="small" color="primary">
+                        Edit
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))
+            }
           </Grid>
         </Container>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography
+          variant="h6"
+          align="center"
+          gutterBottom
+        >
           Footer
         </Typography>
         <Typography
@@ -161,6 +189,8 @@ export default function Album() {
         <Copyright />
       </footer>
       {/* End footer */}
-    </React.Fragment>
-  );
+    </Fragment>
+  )
 }
+
+export default Album

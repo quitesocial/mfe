@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, {
+  useEffect,
+  useRef,
+} from 'react'
 
 import { mount } from 'dashboard/DashboardApp'
 
-export default () => {
+const DashboardApp = () => {
   const ref = useRef(null)
   
   useEffect(() => {
@@ -11,3 +14,5 @@ export default () => {
   
   return <div ref={ref} />
 }
+
+export default DashboardApp
