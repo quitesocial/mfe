@@ -34,33 +34,6 @@ const history = createBrowserHistory()
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false)
   
-  const welcomeMessages = {
-    russian: 'Добро пожаловать',
-    english: 'Welcome',
-    french: 'Bienvenue',
-    italian: 'Benvenuto',
-    spanish: 'bienvenido',
-    chinese: '歡迎',
-    finnish: 'Tervetuloa'
-  };
-  
-  function countLanguages(obj: any, propsArr: any) {
-    const result = propsArr.reduce(
-      (acc: any, cur: any) => {
-        if (obj[cur]) {
-          acc = acc + 1;
-        }
-        
-        return acc
-      },
-      0
-    );
-    console.log(result);
-    return result;
-  }
-  
-  console.log(countLanguages(welcomeMessages, ['english', 'french', 'mandarin']));
-  
   useEffect(() => {
     if (isSignedIn) {
       history.push('/dashboard')
