@@ -1,5 +1,6 @@
 import React from 'react'
 
+import styled from 'styled-components/macro'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 
@@ -12,13 +13,15 @@ const useStyles = makeStyles((theme) => createStyles({
   },
 }))
 
+const Container = styled.div``
+
 const Progress = () => {
   const classes = useStyles()
   
   return (
-    <div className={classes.bar}>
+    <Container className={classes.bar}>
       <LinearProgress />
-    </div>
+    </Container>
   )
 }
 
