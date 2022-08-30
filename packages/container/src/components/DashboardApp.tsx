@@ -3,7 +3,6 @@ import React, {
   useRef,
 } from 'react'
 
-// @ts-expect-error
 import { mount } from 'dashboard/DashboardApp'
 
 const DashboardApp = () => {
