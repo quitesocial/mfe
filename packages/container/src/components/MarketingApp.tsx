@@ -4,7 +4,6 @@ import React, {
 } from 'react'
 import { useHistory } from 'react-router-dom'
 
-// @ts-expect-error
 import { mount } from 'marketing/MarketingApp'
 
 type TOnNavigateArgs = {
