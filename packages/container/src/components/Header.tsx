@@ -55,7 +55,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Header = ({ isSignedIn, onSignOut }) => {
+type THeader = {
+  isSignedIn: boolean,
+  onSignOut: () => void,
+}
+
+const Header = ({ isSignedIn, onSignOut }: THeader) => {
   const classes = useStyles()
 
   const onClick = () => {
